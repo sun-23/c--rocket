@@ -1,0 +1,8 @@
+D:\Chaichana23\rocket_chaichana\bin\Debug\rocket_chaichana.exe
+D:\Chaichana23\rocket_chaichana\bin\Debug\rocket_chaichana.pdb
+D:\Chaichana23\rocket_chaichana\obj\x86\Debug\rocket_chaichana.Form1.resources
+D:\Chaichana23\rocket_chaichana\obj\x86\Debug\rocket_chaichana.Properties.Resources.resources
+D:\Chaichana23\rocket_chaichana\obj\x86\Debug\rocket_chaichana.csproj.GenerateResource.Cache
+D:\Chaichana23\rocket_chaichana\obj\x86\Debug\rocket_chaichana.exe
+D:\Chaichana23\rocket_chaichana\obj\x86\Debug\rocket_chaichana.pdb
+D:\Chaichana23\rocket_chaichana\obj\x86\Debug\rocket_chaichana.csprojResolveAssemblyReference.cache
