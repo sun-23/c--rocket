@@ -14,7 +14,6 @@ namespace rocket_chaichana
         int cnt = 1;
         int y1;
         int y2;
-        int y3;
 
         int h;
         Random r;
@@ -66,9 +65,7 @@ namespace rocket_chaichana
             start = true;
 
             pictureBox1.Load(@"images\rocket.jpg");
-            pictureBox1.Left = -pictureBox1.Width;
             pictureBox2.Load(@"images\rocket1.jpg");
-            pictureBox2.Left = +pictureBox1.Width;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -131,6 +128,8 @@ namespace rocket_chaichana
                     if (score <= 0)
                     {
                         progressBar1.Value = 0;
+                       
+
                     }
                     else
                     {
@@ -154,6 +153,7 @@ namespace rocket_chaichana
                     if (score <= 0)
                     {
                         progressBar1.Value = 0;
+
                     }
                     else
                     {
@@ -173,13 +173,15 @@ namespace rocket_chaichana
                 else
                 {
                     score = score + 10;
-                    if (score <= 200)
+                    if (score < 200)
                     {
                         progressBar1.Value = score;
                     }
                     else
                     {
                         progressBar1.Value = 200;
+                        progressBar1.Enabled = false;
+
                     }
                     label1.Text = score.ToString();
                     if (score >= 200)
@@ -235,7 +237,7 @@ namespace rocket_chaichana
             {
                 pictureBox2.Load(@"images\rocket1.jpg");
 
-                pictureBox2.Left = +Width;
+                pictureBox2.Left = Width;
                 pictureBox2.Top = r.Next(h - pictureBox2.Height * 2);
                 y2 = pictureBox2.Top;
 
@@ -281,10 +283,8 @@ namespace rocket_chaichana
             {
                 pictureBox3.Load(@"images\rocket2.jpg");
 
-                pictureBox3.Left = -pictureBox2.Width;
-                pictureBox3.Top = r.Next(h - pictureBox3.Height * 2);
-                y3 = pictureBox2.Top;
-
+                pictureBox3.Left = r.Next(Width - pictureBox3.Width * 2);
+                pictureBox3.Top = Height;
                 pictureBox3.Visible = true;
 
                 timer6.Enabled = false;
@@ -296,9 +296,7 @@ namespace rocket_chaichana
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             timer5.Enabled = false;
-            pictureBox2.Load(@"images\BOMB.jpg");
-            int w2 = pictureBox2.Height;
-            pictureBox3.Top = Height;
+            pictureBox3.Load(@"images\BOMB.jpg");
             timer6.Enabled = true;
 
             scoreCal(true, 2);
