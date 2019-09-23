@@ -256,50 +256,50 @@ namespace rocket_chaichana
 
         private void timer5_Tick(object sender, EventArgs e)
         {
-            pictureBox3.Left = pictureBox3.Left + 10;
-            pictureBox3.Top = pictureBox3.Top - 5;
-            if (pictureBox3.Top < -pictureBox3.Height || pictureBox3.Left > Width)
+            pictureBox3.Left = pictureBox3.Left + 10;  //พื้นที่ด้านซ้าย ของ pictureBox3 เพิ่มขึ้น 10 ทำให้ภาพเลื่อนขวา
+            pictureBox3.Top = pictureBox3.Top - 5; //พื้นที่ด้านบน ของ pictureBox3 ลดลง 5 ทำให้ภาพเลื่อนขขึ้น
+            if (pictureBox3.Top < -pictureBox3.Height || pictureBox3.Left > Width) // ถ้าภาพออกนอกฟร์ม ด้านบน หรือ ด้านขวา
             {
-                pictureBox3.Top = Height;
-                pictureBox3.Left = r.Next(Width - pictureBox3.Width * 2);
+                pictureBox3.Top = Height; // ทำให้จรวดเลื่อนลงไปใต้ฟอร์ม
+                pictureBox3.Left = r.Next(Width - pictureBox3.Width * 2); // สุ่มแกนy จากค่า r ทำให้่สุ่ม position y  ตอนปล่อยจรวด
 
-                scoreCal(true, 1);
+                scoreCal(true, 1); // เรียกฟังชั่นคะแนนลบ 15
             }
 
         }
 
         private void timer6_Tick(object sender, EventArgs e)
         {
-            if (cnt % 2 == 1)
+            if (cnt % 2 == 1) // ถ้า cnt / 2 เศษ == 1 เป็นจริง
             {
-                pictureBox3.Visible = false;
+                pictureBox3.Visible = false; // ภาพหายไป
             }
-            else
+            else // ถ้า cnt / 2 เศษ == 1 เป็นเท็จ
             {
-                pictureBox3.Visible = true;
+                pictureBox3.Visible = true; // ภาพโผล่ขึ้นมา
             }
-            cnt++;
-            if (cnt == 10)
+            cnt++; // ค่า cnt บวก 1
+            if (cnt == 10) // ถ้า cnt == 10 เป็นจริง
             {
-                pictureBox3.Load(@"images\rocket2.jpg");
+                pictureBox3.Load(@"images\rocket2.jpg"); //pictureBox3 Load ภาพ
 
-                pictureBox3.Left = r.Next(Width - pictureBox3.Width * 2);
-                pictureBox3.Top = Height;
-                pictureBox3.Visible = true;
+                pictureBox3.Left = r.Next(Width - pictureBox3.Width * 2); // สุ่มแกนy จากค่า r ทำให้่สุ่ม position y  ตอนปล่อยจรวด 
+                pictureBox3.Top = Height;// ทำให้จรวดเลื่อนลงไปใต้ฟอร์ม
+                pictureBox3.Visible = true;// ภาพโผล่ขึ้นมา
 
-                timer6.Enabled = false;
-                timer5.Enabled = true;
+                timer6.Enabled = false; // timer6 ไม่ทำงาน
+                timer5.Enabled = true;// timer5 ทำงาน
                 cnt = 0;
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            timer5.Enabled = false;
-            pictureBox3.Load(@"images\BOMB.jpg");
-            timer6.Enabled = true;
+            timer5.Enabled = false; // timer5 ไม่ทำงาน
+            pictureBox3.Load(@"images\BOMB.jpg"); //pictureBox3 Load ภาพ
+            timer6.Enabled = true; // timer6 ทำงาน
 
-            scoreCal(true, 2);
+            scoreCal(true, 2);  // เรียกฟังชั่นคะแนนบวก 10
         }
 
     }
